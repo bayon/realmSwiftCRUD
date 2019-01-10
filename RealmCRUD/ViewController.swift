@@ -22,77 +22,46 @@ class ViewController: UIViewController {
         //3)
         func create(){
             let car = Car()
-            car.bodyNumber = "no-2"
-            car.name = "car2"
-            car.price = 8880
+            car.bodyNumber = "no-9"
+            car.name = "car9"
+            car.price = 999
             try! realm.write {
                 realm.add(car)
             }
         }
-/*
-        let car = Car()
-        car.bodyNumber = "no-2"
-        car.name = "car2"
-        car.price = 8880
-        */
-        //4)
-        //CREATE
-        /*
-        try! realm.write {
-            realm.add(car)
-        }
- */
+
         
         func update(){
-            let cars = realm.objects(Car.self).filter("name = %@", "car2")
+            let cars = realm.objects(Car.self).filter("name = %@", "car9")
             if let car = cars.first {
                 try! realm.write {
-                    car.name = "coup2"
+                    car.name = "coup9909"
                     
                 }
             }
         }//end update
-        //UPDATE
-        /*
-        let cars = realm.objects(Car.self).filter("name = %@", "car2")
-        if let car = cars.first {
-            try! realm.write {
-                car.name = "coup2"
-                
-            }
-        }
-        */
-        // DELETE
-        /*
-        let deleteNumber: String = "no-1"
-        let cars = realm.objects(Car.self).filter("bodyNumber = %@","\(deleteNumber) " )
         
-        if cars.count > 0 {
-            for car in cars {
-                try! realm.write {
-                    realm.delete(car)
-                }
-            }
-        }
-        */
-        func delete(){
-            // DELETE
+        func delete(number:String){
+           
+            let cars = realm.objects(Car.self).filter("bodyNumber = %@",number )
 
-             let deleteNumber: String = "no-1"
-             let cars = realm.objects(Car.self).filter("bodyNumber = %@","\(deleteNumber) " )
-            
+            print(cars)
+            print("cars count:\(cars.count)")
              if cars.count > 0 {
                  for car in cars {
-                     try! realm.write {
+                    print("car delete loop")
+                    print(car)
+                    /* try! realm.write {
                         realm.delete(car)
-                     }
+                     }*/
+                    try? realm.write ({
+                        realm.delete(car)
+                    })
                  }
              }
         }//end delete
  
         func read() {
-            //5)
-            //READ
             
             let cars =  realm.objects(Car.self)
             if cars.count > 0 {
@@ -101,8 +70,9 @@ class ViewController: UIViewController {
                 }
             }
         }//end read
- 
-        
+        delete(number:"no-2")
+       // create()
+       // update()
         read()
     }
 
