@@ -13,6 +13,7 @@
 		B69F9CC021E7878000C9837F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B69F9CBE21E7878000C9837F /* Main.storyboard */; };
 		B69F9CC221E7878100C9837F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B69F9CC121E7878100C9837F /* Assets.xcassets */; };
 		B69F9CC521E7878100C9837F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B69F9CC321E7878100C9837F /* LaunchScreen.storyboard */; };
+		B69F9CCF21E7B0C200C9837F /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69F9CCE21E7B0C200C9837F /* Dog.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		B69F9CC121E7878100C9837F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B69F9CC421E7878100C9837F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B69F9CC621E7878100C9837F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B69F9CCE21E7B0C200C9837F /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
 		F71E50551E36D5784C739395 /* Pods-RealmCRUD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmCRUD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RealmCRUD/Pods-RealmCRUD.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +86,7 @@
 				B69F9CC121E7878100C9837F /* Assets.xcassets */,
 				B69F9CC321E7878100C9837F /* LaunchScreen.storyboard */,
 				B69F9CC621E7878100C9837F /* Info.plist */,
+				B69F9CCE21E7B0C200C9837F /* Dog.swift */,
 			);
 			path = RealmCRUD;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 			files = (
 				B69F9CBD21E7878000C9837F /* ViewController.swift in Sources */,
 				B69F9CBB21E7878000C9837F /* AppDelegate.swift in Sources */,
+				B69F9CCF21E7B0C200C9837F /* Dog.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

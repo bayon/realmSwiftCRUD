@@ -19,6 +19,9 @@ class Car: Object {
     
 }
 
+
+
+
 class ViewController: UIViewController {
     
     let realm:Realm = try! Realm()
@@ -36,6 +39,10 @@ class ViewController: UIViewController {
         
         
         readAll()
+        
+        //createDog(breed:"german shepard", name:"Thunder", price:400 )
+        // createDog(breed:"hound dog", name:"Sniffer", price:600 )
+        readAllDogs()
         
     }//end viewDidLoad
     
@@ -91,6 +98,27 @@ class ViewController: UIViewController {
     }//end read
 
 
+    
+    
+    func createDog(breed:String, name:String, price:Int16 ){
+         let dog = Dog()
+        dog.breed = breed
+        dog.name = name
+        dog.price = price
+        try! realm.write {
+            realm.add(dog)
+        }
+    }
+    
+    func readAllDogs() {
+        let dogs =  realm.objects(Dog.self)
+        if dogs.count > 0 {
+            for dog in dogs {
+                print("\(dog.breed):\(dog.name):\(dog.price)")
+            }
+        }
+    }//end readAll
+   
 }
 
 
