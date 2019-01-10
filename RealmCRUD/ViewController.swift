@@ -20,49 +20,41 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         //3)
-        func create(){
+        func create(bodyNumber:String, name:String, price:Int16 ){
             let car = Car()
-            car.bodyNumber = "no-9"
-            car.name = "car9"
-            car.price = 999
+            car.bodyNumber = bodyNumber
+            car.name = name
+            car.price = price
             try! realm.write {
                 realm.add(car)
             }
         }
-
-        
-        func update(){
-            let cars = realm.objects(Car.self).filter("name = %@", "car9")
+        func  updateCarName(name:String,newName:String){
+            
+            let cars = realm.objects(Car.self).filter("name = %@", name)
             if let car = cars.first {
                 try! realm.write {
-                    car.name = "coup9909"
-                    
+                    car.name = newName
                 }
             }
-        }//end update
+        }//end updateCarName
+        
+        
         
         func delete(number:String){
            
             let cars = realm.objects(Car.self).filter("bodyNumber = %@",number )
-
-            print(cars)
-            print("cars count:\(cars.count)")
              if cars.count > 0 {
                  for car in cars {
-                    print("car delete loop")
-                    print(car)
-                    /* try! realm.write {
-                        realm.delete(car)
-                     }*/
                     try? realm.write ({
                         realm.delete(car)
                     })
                  }
              }
+            
         }//end delete
  
-        func read() {
-            
+        func readAll() {
             let cars =  realm.objects(Car.self)
             if cars.count > 0 {
                 for car in cars {
@@ -70,10 +62,23 @@ class ViewController: UIViewController {
                 }
             }
         }//end read
-        delete(number:"no-2")
-       // create()
-       // update()
-        read()
+        
+        func read(number: String){
+            let cars = realm.objects(Car.self).filter("bodyNumber = %@",number )
+            if cars.count > 0 {
+                for car in cars {
+                    print("\(car.bodyNumber):\(car.name):\(car.price)")
+                }
+            }
+        }
+        
+        
+        // delete(number:"no-2")
+        // create(bodyNumber:"no-401", name:"coup401", price:20000 )
+        // updateCarName(name:"car77",newName:"T-Bird77")
+        // read(number: "no-77")
+        readAll()
+        
     }
 
 
