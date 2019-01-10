@@ -26,6 +26,18 @@ class ViewController: UIViewController {
     
     let realm:Realm = try! Realm()
     
+    
+    @IBAction func button(_ sender: Any) {
+   
+    performSegue(withIdentifier: "toOtherVC", sender: self)
+    
+    }
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
