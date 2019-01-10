@@ -1,0 +1,5 @@
+target '/Users/bayon/Projects/_freelance/connect/research/RealmCRUD/RealmCRUD.xcodeproj' do
+    use_frameworks!
+    pod 'RealmSwift'
+end 
+
